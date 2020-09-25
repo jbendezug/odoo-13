@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="hobby_view_tree">
+      <field name="name">hobby.view.tree</field>
+      <field name="model">type.hobby</field>
+      <field name="arch" type="xml">
+        <tree editable="top">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+    <!-- explicit list view definition -->
+
+ 
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="hobby_action">
+      <field name="name">hobby</field>
+      <field name="res_model">type.hobby</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+ <menuitem
+        id="hr_hobby_type_menu"
+        name="Hobby"
+        action="hobby_action"
+        parent="hr.menu_human_resources_configuration_employee"
+        sequence="1"
+        groups="base.group_no_one"/>
+
+
+</data>
+</odoo>

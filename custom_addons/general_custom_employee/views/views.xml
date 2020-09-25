@@ -1,0 +1,51 @@
+<odoo>
+  <data>
+  <!-- INHERITANCE TO MODEL HR -->
+    <record id="general_custom_employee" model="ir.ui.view">
+    <field name="name">general.custom.employee</field>
+    <field name="model">hr.employee</field>
+    <field name="inherit_id" ref="hr.view_employee_form"/>
+    <field name="arch" type="xml">
+
+      <field name="mobile_phone" position="replace">
+        <field name="whatsapp"/>
+      </field>
+
+      <field name="work_location" position="replace">
+        <field name="ages"/>
+      </field>
+
+      <notebook>
+        <page string='About'>
+          <group>
+            <group string="Social Media">
+              <field name="facebook"/>
+              <field name="twitter"/>
+              <field name="instagram"/>
+              <field name="telegram"/>
+              <field name="medium"/>
+              <field name="linked"/>
+            </group>
+
+            <group string="Personal Information">
+              <field name="religion"/>            
+              <field name="hobby_ids" widget="many2many_tags"/>
+              <field name="tall"/>
+              <field name="disease"/>
+              <field name="allergy"/>
+              <field name="bpjs_kesehatan"/>
+              <field name="bpjs_kk"/>
+              <field name="blood"/>
+            </group>
+
+            <group>
+              <field name="about"/>
+            </group>
+          </group>
+        </page>
+      </notebook>
+    
+    </field>
+    </record>
+  </data>
+</odoo>

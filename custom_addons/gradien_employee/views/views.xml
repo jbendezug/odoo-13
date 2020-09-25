@@ -1,0 +1,30 @@
+<odoo>
+  <data>
+  <!-- INHERITANCE VIEW TO HR.EMPLOYEE -->
+
+    <record id="gradien_custom_employee" model="ir.ui.view">
+    <field name="name">gradien.custom.employee</field>
+    <field name="model">hr.employee</field>
+    <field name="inherit_id" ref="hr.view_employee_form"/>
+    <field name="arch" type="xml">
+
+
+      <field name="parent_id" position="replace">
+        <field name="status"/>
+        <field name="batch"/>
+        <field name="member_id"/>
+      </field>
+
+      <field name="linked" position="after">
+        <field name="github"/>
+        <field name="website"/>
+      </field>
+      
+      
+    
+    </field>
+    </record>
+
+
+  </data>
+</odoo>

@@ -1,0 +1,63 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<record id="gradien_gamifikasi" model="ir.ui.view">
+    <field name="name">gradien.gamifikasi</field>
+    <field name="model">hr.employee</field>
+    <field name="inherit_id" ref="hr.view_employee_form"/>
+    <field name="arch" type="xml">
+
+
+      <field name="job_id" position="replace">
+        <field name="rank"/>
+      </field>
+      <field name="department_id" position="replace">
+        <field name="xp"/>
+      </field>
+    
+    </field>
+</record>
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="gradien_gamifikasi.action_window">
+      <field name="name">gradien_gamifikasi window</field>
+      <field name="res_model">gradien_gamifikasi.gradien_gamifikasi</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="gradien_gamifikasi.action_server">
+      <field name="name">gradien_gamifikasi server</field>
+      <field name="model_id" ref="model_gradien_gamifikasi_gradien_gamifikasi"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="gradien_gamifikasi" id="gradien_gamifikasi.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="gradien_gamifikasi.menu_1" parent="gradien_gamifikasi.menu_root"/>
+    <menuitem name="Menu 2" id="gradien_gamifikasi.menu_2" parent="gradien_gamifikasi.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="gradien_gamifikasi.menu_1_list" parent="gradien_gamifikasi.menu_1"
+              action="gradien_gamifikasi.action_window"/>
+    <menuitem name="Server to list" id="gradien_gamifikasi" parent="gradien_gamifikasi.menu_2"
+              action="gradien_gamifikasi.action_server"/>
+-->
+  </data>
+</odoo>
